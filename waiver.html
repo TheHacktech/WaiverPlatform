@@ -1,13 +1,20 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Waiver for Caltech's annual Hackathon">
+        <title>Hacktech Waiver</title>
     </head>
 
     <body>
+      <div class="container">
         <h1 class="waiver-title"> HACKTECH RELEASE </h1>
-
+        <div class="container" id="waivtext">
         <p class="waiver">
-            I <input class="text" id="inline-name"> </input> am 18 years old or older and I voluntarily seek to participate in Hacktech, a hackathon (“the Program”) run by the California Institute of Technology (“Caltech”) from 7:00pm Pacific Standard Time on March 3, 2017 to 5:00pm PST on March 5, 2017.The activities of the Program include designing, developing, and presenting an innovative technical project over a thirty-six hour period.
+            I, <input class="text" id="inline-name" placeholder="Firstname Lastname"> </input>, am 18 years old or older and I voluntarily seek to participate in Hacktech, a hackathon (“the Program”) run by the California Institute of Technology (“Caltech”) from 7:00pm Pacific Standard Time on March 3, 2017 to 5:00pm PST on March 5, 2017.The activities of the Program include designing, developing, and presenting an innovative technical project over a thirty-six hour period.
         </p>
 
         <p class="waiver-header1">
@@ -47,19 +54,22 @@
         </p>
 
         <br>
+      </div>
 
 
 
         <form onsubmit="return submitForm(); "id="waiver-form">
+          <p>
             Application email: <input type="email" id="email" </input>
-            <br>
+          </p><p>
             Legal Name (acting as signature): <input type="text" id="signature"> </input>
-            <br>
+          </p><p>
             Date: <input type="text" id="date"> </input>
-            <br>
+          </p><p>
             <input type="submit" value="submit">
+          </p>
         </form>
-
+    </div>
     </body>
     <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
     <script>
