@@ -1,0 +1,35 @@
+body {
+    background-color: #cd989f;
+}
+
+.waiver-title {
+    color: white;
+    text-align: center;
+}
+
+.waiver {
+    margin: 15px;
+}
+
+.waiver-header1 {
+    text-decoration: underline;
+    margin: 15px;
+}
+
+.waiver-header2 {
+    margin: 15px;
+    text-align: center;
+}
+
+.waiver-warning {
+    margin: 15px;
+}
+
+.waiver-form {
+    margin: 15px;
+}
+
+.thanks {
+    text-align: center;
+    color: white;
+}

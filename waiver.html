@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <h1 class="waiver-title"> HACKTECH RELEASE </h1>
+
+        <p class="waiver">
+            I <input class="text" id="inline-name"> </input> am 18 years old or older and I voluntarily seek to participate in Hacktech, a hackathon (“the Program”) run by the California Institute of Technology (“Caltech”) from 7:00pm Pacific Standard Time on March 3, 2017 to 5:00pm PST on March 5, 2017.The activities of the Program include designing, developing, and presenting an innovative technical project over a thirty-six hour period.
+        </p>
+
+        <p class="waiver-header1">
+            Assumption of Risk, Waiver of Liability, and Indemnity Agreement
+        </p>
+
+        <p class="waiver">
+            I understand that my participation in the Program is completely voluntary.  I further understand that there are inherent risks of injury, serious bodily harm, and death associated with the Program that cannot be eliminated regardless of the care take to avoid injuries.  The risks of the Program include but are not limited to, travel by bus and/or car, personal physical injury, malfunction of various electrical equipment, and damage to property. I expressly agree to accept and assume all such risks, including personal injury and death, arising in any way from my participation in the Program.  I represent that I have no physical or mental condition that prevents me from participating in the Program in a manner that is safe for me and others.
+        </p>
+
+        <p class="waiver-header2">
+            READ CAREFULLY – YOU ARE WAIVING LEGAL RIGHTS
+        </p>
+
+        <p class="waiver">
+            In consideration of the benefits I will receive from participating in the Program, I agree, for myself, my heirs, personal representatives and assigns, to release and discharge and promise not to sue Caltech and any subsidiary, affiliate or government sponsor of Caltech (collectively referred to as “Caltech”), as well as any person acting in his/her capacity as employee, officer, trustee, or agent of Caltech (collectively referred to as “Released Parties”), from and with respect to any and all claims that may arise from, are related to, or are in any way connected with the Program, resulting in injury, illness, death, damage or property loss, whether the claims result from the negligence of Caltech and/or any other Released Parties, or from any other cause, provided, however, that this does not extend to gross negligence, willful misconduct or a violation of law by Caltech or any other Released Parties.  I knowingly and voluntarily waive any and all rights and benefits conferred upon me by the provisions of Section 1542 of the California Civil Code or by any similar law or provision, which Section reads as follows: “A GENERAL RELEASE DOES NOT EXTEND TO CLAIMS WHICH THE CREDITOR DOES NOT KNOW OR SUSPECT TO EXIST IN HIS OR HER FAVOR AT THE TIME OF EXECUTING THE RELEASE, WHICH IF KNOWN BY HIM OR HER MUST HAVE MATERIALLY AFFECTED HIS OR HER SETTLEMENT WITH THE DEBTOR.”
+        </p>
+
+        <p class="waiver">
+            I agree to indemnify Caltech and the Released Parties for any and all claims and liabilities against them arising out of or relating to my participation in the Program.  I understand and agree that if a claim, suit, or attachment is brought or sought against me as a result in any way of my participation in the Program, I shall not be entitled to any defense or indemnification by Caltech or the Released Parties in connection with such claim, suit, or attachment.
+        </p>
+
+        <p class="waiver-header1">
+            Permission for Use of Image and Statements
+        </p>
+
+        <p class="waiver">
+            I agree that Caltech has the right to make, use, and create derivative works, and/or display photos, video and/or audio tape recordings of me.  I understand that I may be photographed and/or video or audio taped verbatim and that Caltech may allow persons external to Caltech to view the pictures or recordings in part or in their entirety.  I am fully aware and agree that such use of my image may include posting on publicly available internet sites and other publicly viewable social media sites. I waive any right that I may have to review or approve of any finished products, or the uses to which such products may be applied.  I release and discharge Caltech and the Released Parties from any liability to me by virtue of any representation that may occur in the creation or use of said photos and/or video or audio tape recordings.
+        </p>
+
+        <p class="waiver-warning">
+            I HAVE CAREFULLY READ THE ABOVE PARAGRAPHS AND FULLY UNDERSTAND THEIR CONTENTS.  I AM AWARE THAT THIS INCLUDES (1) AN ASSUMPTION OF RISK A WAIVER OF LIABILITY AND AN INDEMNITY AGREEMENT, AND (2) A PHOTO, VIDEO AND AUDIO RELEASE, AND I SIGN THIS OF MY OWN FREE WILL.
+        </p>
+
+        <p class="waiver-warning">
+            I UNDERSTAND THAT I AM GIVING UP SUBSTANTIAL RIGHTS, INCLUDING MY RIGHT TO SUE.  I DECLARE UNDER PENALTY OF PERJURY UNDER THE LAWS OF THE STATE OF CALIFORNIA THAT THE FOREGOING IS TRUE AND CORRECT.
+        </p>
+
+        <br>
+
+
+
+        <form onsubmit="return submitForm(); "id="waiver-form">
+            Application email: <input type="email" id="email" </input>
+            <br>
+            Legal Name (acting as signature): <input type="text" id="signature"> </input>
+            <br>
+            Date: <input type="text" id="date"> </input>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDtqaPYz99OX8-jn3So-YnYikujfBl86j4",
+        authDomain: "waivers-c463a.firebaseapp.com",
+        databaseURL: "https://waivers-c463a.firebaseio.com",
+        storageBucket: "waivers-c463a.appspot.com",
+        messagingSenderId: "802753933275"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+    var database = firebase.database();
+
+    function writeUserData(email, name) {
+        firebase.database().ref('users/').push({
+            email: email,
+            name: name
+        });
+    }
+
+    function submitForm() {
+        var email = document.getElementById('email').value;
+        var legalname = document.getElementById('signature').value;
+        var name = document.getElementById('inline-name').value;
+        var date = document.getElementById('date').value;
+        if (email != "" && legalname != "" && name != "" && date != "") {
+            console.log("valid");
+            writeUserData(email, name);
+            window.location.replace("hacktech.io");
+            return false;
+        } else {
+            alert("A field is still empty!");
+        }
+        return false;
+    }
+    </script>
+
+</html>
