@@ -56,7 +56,10 @@ input[id=inline-name] {
 }
 
 form {
-  text-align: center;
+  text-align: right;
+  position: absolute;
+  left: 50%;
+  margin-left: -220px;
   margin-top: 4%;
   color:#fff;
 }
